@@ -1,17 +1,17 @@
 from tkinter import *
 import random
 import time
+from Score import Score # Імпортуємо новий клас
 
-tk = Tk() # Створює нове вікно Tkinter
+tk = Tk()
 tk.title("Гра: Ловець!")
-tk.resizable(0, 0) # Вимикає можливість зміни розміру вікна користувачем.
-# Робить вікно завжди знаходиться на верху інших вікон.
+tk.resizable(0, 0)
 tk.wm_attributes("-topmost", 1)
 
-# Створення полотна для малювання гри:
 canvas = Canvas(tk, width=500, height=400, bd=0, highlightthickness=0)
 canvas.pack()
 
-# Оновлення та пауза:
+score = Score(canvas) # Ініціалізуємо клас рахунку
+
 tk.update()
-time.sleep(3)
+time.sleep(1)
