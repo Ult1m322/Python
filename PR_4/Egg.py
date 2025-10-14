@@ -2,13 +2,19 @@ import random
 
 class Egg:
     def __init__(self, canvas, color, score):
-        # Ініціалізація атрибутів
         self.canvas = canvas
         self.color = color
-        self.score = score # Посилання на об'єкт рахунку
-        # Створення овалу (яйця)
+        self.score = score
         self.id = canvas.create_oval(0, 0, 25, 25, fill=color)
-        # Розміщення яйця у випадковій позиції вгорі
         self.canvas.move(self.id, random.randint(10, 490), -10)
-        # Визначення випадкової швидкості падіння
         self.y = random.randint(1, 4)
+
+    def draw(self):
+        self.canvas.move(self.id, 0, self.y) # Рухаємо яйце вниз
+        pos = self.canvas.coords(self.id)
+        # Перевірка, чи яйце досягло низу
+        if pos[3] >= self.canvas.winfo_height():
+            self.score.lost_egg() # Збільшуємо лічильник пропущених
+            self.canvas.delete(self.id) # Видаляємо яйце
+            return 'hit bottom'
+        return None
