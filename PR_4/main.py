@@ -39,3 +39,17 @@ while 1:
         tk.update_idletasks()
         tk.update()
         time.sleep(0.01)
+
+        while 1:
+            if random.randint(1, 100) == 1:
+                eggs.append(Egg(canvas, 'red', score))
+
+            for egg in list(eggs):
+                if egg.draw() == 'hit bottom':
+                    eggs.remove(egg)
+
+            catcher.draw()  # Викликаємо метод руху ловця
+
+            tk.update_idletasks()
+            tk.update()
+            time.sleep(0.01)
