@@ -1,7 +1,8 @@
 from tkinter import *
 import random
 import time
-from Score import Score # Імпортуємо новий клас
+from Score import Score
+from Catcher import Catcher # Імпортуємо клас ловця
 
 tk = Tk()
 tk.title("Гра: Ловець!")
@@ -11,7 +12,8 @@ tk.wm_attributes("-topmost", 1)
 canvas = Canvas(tk, width=500, height=400, bd=0, highlightthickness=0)
 canvas.pack()
 
-score = Score(canvas) # Ініціалізуємо клас рахунку
+score = Score(canvas)
+catcher = Catcher(canvas, 'blue', score) # Ініціалізуємо ловця
 
 tk.update()
 time.sleep(1)
