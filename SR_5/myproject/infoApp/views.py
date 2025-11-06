@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.http import HttpResponse
+
+
+def student_info(request):
+    # Створюємо простий текстовий рядок з перенесенням рядків
+    text_content = """Інформація про студента
+Прізвище Ім'я: Кішко Олексій
+Группа: ІСД-32
+"""
+
+    return HttpResponse(text_content, content_type='text/plain; charset=utf-8')
