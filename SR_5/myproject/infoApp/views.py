@@ -4,7 +4,7 @@ from django.http import HttpResponse
 
 
 def student_info(request):
-    # Створюємо простий текстовий рядок з перенесенням рядків
+
     text_content = """Інформація про студента
 Прізвище Ім'я: Кішко Олексій
 Группа: ІСД-32
