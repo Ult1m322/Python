@@ -22,3 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", student_info, name='home'),
 ]
+

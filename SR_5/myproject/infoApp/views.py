@@ -1,13 +1,29 @@
-from django.shortcuts import render
-
 from django.http import HttpResponse
 
-
 def student_info(request):
-
-    text_content = """Інформація про студента
-Прізвище Ім'я: Кішко Олексій
-Группа: ІСД-32
-"""
-
-    return HttpResponse(text_content, content_type='text/plain; charset=utf-8')
+    html_content = """
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Інформація про студента</title>
+        </head>
+        <body>
+            <h1>Інформація про студента</h1>
+            <table border="1">
+                <tr>
+                    <td>Прізвище</td>
+                    <td>Кішко</td>
+                </tr>
+                <tr>
+                   <td>Ім'я </td>   
+                   <td>Олексій </td> 
+                </tr>
+                <tr>
+                    <td>Група</td>
+                    <td>ІСД-32</td>
+                </tr>
+            </table>
+        </body>
+    </html>
+    """
+    return HttpResponse(html_content, content_type='text/html; charset=utf-8')
