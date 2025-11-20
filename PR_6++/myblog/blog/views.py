@@ -1,18 +1,23 @@
-from .models import Post
 from django.shortcuts import render, get_object_or_404
-
-def post_list(request):
-    posts = Post.published.all()
-    return render(request, 'blog/post/list.html', {'posts': posts})
+from django.views.generic import ListView
+from .models import Post
 
 
-def post_detail(request, year, month, day, post):
-    # Получаем пост по дате и слагу [cite: 398]
+class PostListView(ListView):
+    queryset = Post.published.all()
+    context_object_name = 'posts'
+    paginate_by = 2
+    template_name = 'blog/post/list.html'
+
+
+# ИСПРАВЛЕНО: функция называется post_details
+def post_details(request, year, month, day, post):
     post = get_object_or_404(Post,
                              status=Post.Status.PUBLISHED,
                              slug=post,
-                             publish_year=year,
-                             publish_month=month,
-                             publish_day=day)
+                             publish__year=year,
+                             publish__month=month,
+                             publish__day=day)
 
-    return render(request, 'blog/post/detail.html', {'post': post})
+    # ИСПРАВЛЕНО: путь к шаблону 'blog/post/details.html'
+    return render(request, 'blog/post/details.html', {'post': post})
