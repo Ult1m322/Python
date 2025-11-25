@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'taggit',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,5 @@ EMAIL_HOST_USER = 'mr.ultimatrix@gmail.com' #random_post@gmail.com
 
 # ТОТ САМЫЙ 16-ЗНАЧНЫЙ ПАРОЛЬ ПРИЛОЖЕНИЯ (без пробелов)
 EMAIL_HOST_PASSWORD = 'abcdefghijklmnop' #abcdefghijklmnop
+
+SITE_ID = 1
