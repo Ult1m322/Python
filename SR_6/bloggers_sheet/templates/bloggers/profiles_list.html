@@ -1,0 +1,22 @@
+{% extends "bloggers/base.html" %}
+
+{% block title %}Профілі Блогерів{% endblock %}
+
+{% block content %}
+    <h1>Профілі Блогерів</h1>
+
+    <table>
+        <tr>
+            <th>Ім'я Блогера</th>
+            <th>Категорія</th>
+            <th>Короткий Опис</th>
+        </tr>
+        {% for blogger in bloggers %}
+        <tr>
+            <td><a href="/profiles/{{ blogger.slug }}/">{{ blogger.name }}</a></td>
+            <td>{{ blogger.category }}</td>
+            <td>{{ blogger.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

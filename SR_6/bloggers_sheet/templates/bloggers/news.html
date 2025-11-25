@@ -1,0 +1,18 @@
+{% extends "bloggers/base.html" %}
+
+{% block title %}Останні Новини{% endblock %}
+
+{% block content %}
+    <h1>Актуальні Новини Світу Блогерів</h1>
+    
+    {% if news %}
+        <ul>
+        {% for item in news %}
+            <li>{{ item.title }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Наразі немає нових новин.</p>
+    {% endif %}
+
+    {% endblock %}

@@ -132,4 +132,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mr.ultimatrix@gmail.com' #random_post@gmail.com
 
 # ТОТ САМЫЙ 16-ЗНАЧНЫЙ ПАРОЛЬ ПРИЛОЖЕНИЯ (без пробелов)
-EMAIL_HOST_PASSWORD = 'docbnraenqlawjnf' #abcdefghijklmnop
+EMAIL_HOST_PASSWORD = 'abcdefghijklmnop' #abcdefghijklmnop

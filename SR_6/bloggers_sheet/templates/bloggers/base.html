@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Платформа Блогерів{% endblock %}</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        table { border-collapse: collapse; width: 80%; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Навігація</h2>
+        <p>
+            <a href="/">Головна</a> |
+            <a href="/profiles/">Профілі</a> |
+            <a href="/news/">Новини</a>
+        </p>
+    </div>
+    <hr>
+    <div id="content">
+        {% block content %}
+            {% endblock %}
+    </div>
+</body>
+</html>
