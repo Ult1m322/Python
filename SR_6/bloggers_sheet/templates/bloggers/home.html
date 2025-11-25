@@ -11,4 +11,22 @@
         <tr><td>Призначення</td><td>Інформаційна платформа про популярних блогерів.</td></tr>
         <tr><td>Наступний крок</td><td><a href="/profiles/">Переглянути всі профілі.</a></td></tr>
     </table>
+
+    <hr>
+
+    <h2>Останні Новини</h2>
+    {% if news %}
+        <table>
+            <tr><th>Назва</th><th>Коротка мітка (Slug)</th></tr>
+            {% for item in news %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>{{ item.slug }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>Наразі немає нових новин.</p>
+    {% endif %}
+
 {% endblock %}
