@@ -46,3 +46,7 @@ def install(request):
             response_text.append(f"Car {data['CAR_NAME']} already exists.")
 
     return HttpResponse("<br>".join(response_text))
+
+def index(request):
+    cars = cars_info.objects.select_related('CAR_BRAND').all()
+    return render(request, 'duikt_task_kishko/index.html', {'cars': cars})
